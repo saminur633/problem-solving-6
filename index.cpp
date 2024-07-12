@@ -114,4 +114,37 @@ int main() {
 
     return 0;
 }
+// problem 8
+#include <iostream>
+using namespace std;
+
+int main() {
+    int A, B;
+    cin >> A >> B;
+
+    if (A >= B) {
+        cout << "Yes" << endl;
+    } else {
+        cout << "No" << endl;
+    }
+
+    return 0;
+}
+
+// problem 9
+#include <iostream>
+using namespace std;
+
+int main() {
+    int A, B;
+    cin >> A >> B;
+
+    if (A % B == 0 || B % A == 0) {
+        cout << "Multiples" << endl;
+    } else {
+        cout << "No Multiples" << endl;
+    }
+
+    return 0;
+}
 
