@@ -331,5 +331,118 @@ int main() {
 
     return 0;
 }
+// problem 17
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+
+    int years = N / 365;
+    int months = (N % 365) / 30;
+    int days = (N % 365) % 30;
+
+    cout << years << " years" << endl;
+    cout << months << " months" << endl;
+    cout << days << " days" << endl;
+
+    return 0;
+}
+// problem 18
+#include <iostream>
+using namespace std;
+
+int main() {
+    float X;
+    cin >> X;
+
+    if (X >= 0.0 && X <= 25.0) {
+        cout << "Interval [0,25]" << endl;
+    } else if (X > 25.0 && X <= 50.0) {
+        cout << "Interval (25,50]" << endl;
+    } else if (X > 50.0 && X <= 75.0) {
+        cout << "Interval (50,75]" << endl;
+    } else if (X > 75.0 && X <= 100.0) {
+        cout << "Interval (75,100]" << endl;
+    } else {
+        cout << "Out of Intervals" << endl;
+    }
+
+    return 0;
+}
+// problem 19
+#include <iostream>
+#include <algorithm> // Include for std::sort
+using namespace std;
+
+int main() {
+    long long int A, B, C;
+    cin >> A >> B >> C;
+    long long int arr[3] = {A, B, C };
+    sort(arr, arr + 3);
+    for (int i = 0; i < 3; i++) {
+        cout << arr[i] << endl;
+    }
+
+    cout << endl;
+
+    cout << A << endl;
+    cout << B << endl;
+    cout << C << endl;
+
+    return 0;
+}
+// problem 20
+#include <iostream>
+#include <iomanip>
+#include <cmath> // Include for floor
+using namespace std;
+
+int main() {
+    double N;
+    cin >> N;
+
+    cout << fixed << setprecision(3);
+
+    // Check if the number is an integer
+    if (N == static_cast<int>(N)) {
+        cout << "int " << static_cast<int>(N) << endl;
+    } else {
+        int integerPart = static_cast<int>(N);
+        double fractionalPart = N - integerPart;
+        cout << "float " << integerPart << " " << fractionalPart << endl;
+    }
+
+    return 0;
+}
+// problem 21
+#include <iostream>
+using namespace std;
+
+int main() {
+    int A, B;
+    char S;
+
+    // Read the input
+    cin >> A >> S >> B;
+
+    switch (S) {
+        case '>':
+            cout << (A > B ? "Right" : "Wrong") << endl;
+            break;
+        case '<':
+            cout << (A < B ? "Right" : "Wrong") << endl;
+            break;
+        case '=':
+            cout << (A == B ? "Right" : "Wrong") << endl;
+            break;
+        default:
+            cout << "Invalid operator" << endl;
+            break;
+    }
+
+    return 0;
+}
 
 
