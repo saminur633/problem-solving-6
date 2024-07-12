@@ -147,4 +147,45 @@ int main() {
 
     return 0;
 }
+// problem 10
+#include <iostream>
+#include <algorithm> // Include <algorithm> for std::min and std::max
+using namespace std;
+
+int main() {
+    int A, B, C;
+    cin >> A >> B >> C;
+    
+    int minValue = min(min(A, B), C); // Find the minimum of A, B, and C
+    int maxValue = max(max(A, B), C); // Find the maximum of A, B, and C
+    
+    cout << minValue << " " << maxValue << endl; // Output the minimum and maximum
+    
+    return 0;
+}
+// problem 11
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string F1, S1;
+    string F2, S2;
+
+    
+    cin >> F1 >> S1;
+
+    
+    cin >> F2 >> S2;
+
+    
+    if (S1 == S2) {
+        cout << "ARE Brothers" << endl;
+    } else {
+        cout << "NOT" << endl;
+    }
+
+    return 0;
+}
+
 
