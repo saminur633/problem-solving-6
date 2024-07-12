@@ -444,5 +444,141 @@ int main() {
 
     return 0;
 }
+// problem 22
+#include <iostream>
+#include <sstream>
+
+using namespace std;
+
+
+string evaluateExpression(string expression) {
+    stringstream ss(expression);
+    int A, B, C;
+    char S, Q;
+
+    ss >> A >> S >> B >> Q >> C;
+
+
+    int correctResult;
+    if (S == '+') {
+        correctResult = A + B;
+    } else if (S == '-') {
+        correctResult = A - B;
+    } else if (S == '*') {
+        correctResult = A * B;
+    } else {
+        return "Invalid operator";
+    }
+
+    // Compare with C and return the appropriate output
+    if (correctResult == C) {
+        return "Yes";
+    } else {
+        return to_string(correctResult);
+    }
+}
+
+int main() {
+    string expression;
+    getline(cin, expression); // Reading input line
+
+    // Evaluate the expression and print the result
+    cout << evaluateExpression(expression) << endl;
+
+    return 0;
+}
+// problem 23
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    int l1, r1, l2, r2;
+    cin >> l1 >> r1 >> l2 >> r2;
+
+    // Calculate the boundaries of the intersection
+    int intersection_start = max(l1, l2);
+    int intersection_end = min(r1, r2);
+
+    // Check if there is an intersection
+    if (intersection_start <= intersection_end) {
+        cout << intersection_start << " " << intersection_end << endl;
+    } else {
+        cout << -1 << endl;
+    }
+
+    return 0;
+}
+
+// problem 24 accept hoy nai
+#include <iostream>
+
+using namespace std;
+
+int lastTwoDigitsMultiplication(int A, int B, int C, int D) {
+    // Calculate the product A * B * C * D
+    long long product = static_cast<long long>(A % 100) * (B % 100) % 100 * (C % 100) % 100 * (D % 100) % 100;
+    
+    // Get the last two digits
+    int lastTwoDigits = product % 100;
+    
+    return lastTwoDigits;
+}
+
+int main() {
+    // Read input values A, B, C, D
+    int A, B, C, D;
+    cin >> A >> B >> C >> D;
+    
+    // Calculate and print the last two digits of the multiplication
+    int result = lastTwoDigitsMultiplication(A, B, C, D);
+    cout << result << endl;
+    
+    return 0;
+}
+// problem 25 submit hoy na
+#include <iostream>
+#include <cmath>
+#include <cstdint>
+
+using namespace std;
+
+int main() {
+    // Read input values A, B, C, D
+    int64_t A, B, C, D;
+    cin >> A >> B >> C >> D;
+    
+    // Calculate A^B and C^D using pow function
+    int64_t AB = pow(A, B);
+    int64_t CD = pow(C, D);
+    
+    // Compare A^B and C^D
+    if (AB > CD) {
+        cout << "YES" << endl;
+    } else {
+        cout << "NO" << endl;
+    }
+
+    return 0;
+}
+
+// problem 26
+#include <iostream>
+#include <cmath>
+#include <cstdint>
+
+using namespace std;
+
+int main() {
+
+    int N ;
+    cin >> N;
+    for (int i = 1; i <= N; i++){
+        cout << i<< endl;
+    }
+
+    return 0;
+}
 
 
