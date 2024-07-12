@@ -45,4 +45,73 @@ int main() {
 
     return 0;
 }
+// problem 4
+#include <iostream>
+using namespace std;
+
+int main() {
+    long long A, B, C, D;
+
+    
+    cin >> A >> B >> C >> D;
+
+   
+    long long X = (A * B) - (C * D);
+
+    
+    cout << "Difference = " << X << endl;
+
+    return 0;
+}
+// problem 5
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+#ifndef M_PI
+#define M_PI 3.141592653
+#endif
+
+int main() {
+    double R;
+    cin >> R;
+
+    double Area = M_PI * R * R;
+    cout << fixed << setprecision(9) << Area << endl;
+
+    return 0;
+}
+// problem 6 mile na 
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+    int sum = 0;
+    for (int i = 0; i <= N; i++) {
+        sum += i;
+    }
+    cout << sum << endl;
+
+    return 0;
+}
+// problem 7
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int A, B;
+    cin >> A >> B;
+
+    double result = static_cast<double>(A) / B;
+
+    cout << "floor " << A << " / " << B << " = " << floor(result) << endl;
+    cout << "ceil " << A << " / " << B << " = " << ceil(result) << endl;
+    cout << "round " << A << " / " << B << " = " << round(result) << endl;
+
+    return 0;
+}
 
