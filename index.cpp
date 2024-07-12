@@ -187,5 +187,120 @@ int main() {
 
     return 0;
 }
+// problem 12
+#include <iostream>
+#include <cctype> // Include for character classification functions
+using namespace std;
+
+int main() {
+    char X;
+    cin >> X;
+    
+    if (isdigit(X)) {
+        cout << "IS DIGIT" << endl;
+    } else if (isupper(X)) {
+        cout << "ALPHA" << endl;
+        cout << "IS CAPITAL" << endl;
+    } else if (islower(X)) {
+        cout << "ALPHA" << endl;
+        cout << "IS SMALL" << endl;
+    } else {
+        cout << "Unknown category" << endl;
+    }
+
+    return 0;
+}
+// problem 13
+#include <iostream>
+#include <cctype> // Include for character classification functions
+
+using namespace std;
+
+int main() {
+    char X;
+    cin >> X;
+
+
+    if (isupper(X)) {
+       
+        char lower = tolower(X);
+        cout << lower << endl;
+    }else if (islower(X)){
+       char upper = toupper(X);
+       cout << upper << endl;
+    }
+     else {
+        
+        cout << X << endl;
+    }
+
+    return 0;
+}
+// problem 14
+#include <iostream>
+using namespace std;
+
+int main() {
+    int A, B;
+    char S;
+
+
+    cin >> A >> S >> B;
+
+
+    switch (S) {
+        case '+':
+            cout << A + B << endl;
+            break;
+        case '-':
+            cout << A - B << endl;
+            break;
+        case '*':
+            cout << A * B << endl;
+            break;
+        case '/':
+            if (B != 0) {
+                cout << A / B << endl;
+            } else {
+                cout << "undefined (division by zero)" << endl;
+            }
+            break;
+        default:
+            cout << "Invalid operator" << endl;
+            break;
+    }
+
+    return 0;
+}
+// problem 15
+#include <iostream>
+using namespace std;
+
+
+int main() {
+    int X;
+
+    
+    cin >> X;
+
+    
+    string X_str = to_string(X);
+
+    
+    char first_digit_char = X_str[0];
+
+   
+    int first_digit = first_digit_char - '0';
+
+   
+    if (first_digit % 2 == 0) {
+        cout << "EVEN" << endl;
+    } else {
+        cout << "ODD" << endl;
+    }
+
+    return 0;
+}
+
 
 
