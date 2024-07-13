@@ -605,5 +605,180 @@ int main() {
     
     return 0;
 }
+//problem 36
+#include <iostream>
+#include <cmath>
+#include <cstdint>
+
+using namespace std;
+
+int main() {
+
+    int n;
+    cin >> n;
+    for (int i = 1; i <= n; i++){
+        if(n % i == 0){
+            cout << i << endl;
+        }
+    }
+
+
+    return 0;
+}
+// problem 38
+#include <iostream>
+
+using namespace std;
+
+bool is_lucky(int num) {
+    while (num > 0) {
+        int digit = num % 10;
+        if (!(digit == 4 || digit == 7)) {
+            return false;
+        }
+        num = num / 10;
+    }
+    return true;
+}
+
+int main() {
+    int a, b;
+    cin >> a >> b;
+
+    bool found = false;
+    for (int i = a; i <= b; i++) {
+        if (is_lucky(i)) {
+            if (found) {
+                cout << " ";
+            }
+            cout << i;
+            found = true;
+        }
+    }
+
+    if (!found) {
+        cout << -1;
+    }
+    cout << endl;
+
+    return 0;
+}
+// three numbers
+#include <iostream>
+
+using namespace std;
+int main() {
+    int k,s;cin >> k >> s;
+    int cnt  = 0;
+    for (int x = 0; x<=k; x++){
+        for(int y = 0; y<=k; y++){
+            int z = s - x -y;
+            if(z >=0 && z <= k){
+                cnt++;
+            }
+                }
+            }
+
+
+    cout << cnt << endl;
+
+    return 0;
+}
+// distinct 
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    int a[n];
+
+    
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    bool visited[1000] = {false}; 
+
+    
+    for (int i = 0; i < n; i++) {
+        int x = a[i];
+        if (x < 1000) { 
+            visited[x] = true;
+        }
+    }
+
+    int cnt = 0;
+
+   
+    for (int i = 0; i < 1000; i++) {
+        if (visited[i]) {
+            cnt++;
+        }
+    }
+
+    cout << cnt << endl;
+
+    return 0;
+}
+// lowest number and where its index
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    int a[n];
+
+
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+    int mn = 1e9;
+    for (int i =0; i<n; i++){
+        mn = min(mn, a[i]);
+    }
+    cout << mn << " "  ;
+    for(int i = 0; i< n; i++){
+        if (a[i]== mn){
+            cout << i+1 << endl;
+        }
+    }
+
+    return 0;
+}
+// reverse 
+#include <iostream>
+#include<algorithm>
+
+using namespace std;
+
+int main() {
+    int n = 6;
+    int a[n] = {1,2,3,4,5,6};
+    reverse(a,a+n);
+    for(int i = 0; i< n; i++){
+        cout << a[i] << ' ';
+    }
+    return 0;
+}
+// sort 
+#include <iostream>
+#include<algorithm>
+
+using namespace std;
+
+int main() {
+    int n = 6;
+    int a[n] = {10,20,3,40,5,60};
+    sort(a,a+n);
+    for(int i = 0; i< n; i++){
+        cout << a[i] << ' ';
+    }
+    return 0;
+}
+
 
 
