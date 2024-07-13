@@ -779,6 +779,150 @@ int main() {
     }
     return 0;
 }
+// problem 28
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+
+    int evenCount = 0, oddCount = 0, positiveCount = 0, negativeCount = 0;
+
+    for (int i = 0; i < N; i++) {
+        int number;
+        cin >> number;
+
+        if (number % 2 == 0) {
+            evenCount++;
+        } else {
+            oddCount++;
+        }
+
+        if (number > 0) {
+            positiveCount++;
+        } else if (number < 0) {
+            negativeCount++;
+        }
+    }
+
+    cout << "Even: " << evenCount << endl;
+    cout << "Odd: " << oddCount << endl;
+    cout << "Positive: " << positiveCount << endl;
+    cout << "Negative: " << negativeCount << endl;
+
+    return 0;
+}
+// problem 29
+#include <iostream>
+using namespace std;
+
+int main() {
+    int password;
+    const int correctPassword = 1999;
+
+    while (cin >> password) {
+        if (password == correctPassword) {
+            cout << "Correct" << endl;
+            break;
+        } else {
+            cout << "Wrong" << endl;
+        }
+    }
+
+    return 0;
+}
+// problem 30
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    int a[n];
+
+    // Reading input into the array
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    // Initializing the maximum element with the first element of the array
+    int maxElement = a[0];
+
+    // Finding the maximum element in the array
+    for (int i = 1; i < n; i++) {
+        if (a[i] > maxElement) {
+            maxElement = a[i];
+        }
+    }
+
+    // Printing the maximum element
+    cout << " " << maxElement << endl;
+
+    return 0;
+}
+// problem 31
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    for (int i = 1; i <= 12; i++) {
+        cout << n << " * " << i << " = " << n * i << endl;
+    }
+
+    return 0;
+}
+// problem 32
+#include <iostream>
+using namespace std;
+
+long long factorial(int n)
+{
+    long long result = 1;
+    for (int i = 1; i <= n; ++i) {
+        result *= i;
+    }
+    return result;
+}
+
+int main()
+{
+    int T;
+    cin >> T;
+
+    // Reading T test cases
+    for (int i = 0; i < T; i++) {
+        int N;
+        cin >> N;
+        cout << factorial(N) << endl;
+    }
+
+    return 0;
+}
+// problem 33
+#include <iostream>
+using namespace std;
+
+bool isPrime(int x) {
+    if (x <= 1) return false;
+    for (int i = 2; i * i <= x; ++i) {
+        if (x % i == 0) return false;
+    }
+    return true;
+}
+
+int main() {
+    int X;
+    cin >> X;
+
+    cout << (isPrime(X) ? "YES" : "NO") << endl;
+
+    return 0;
+}
+// problem 34
 
 
 
