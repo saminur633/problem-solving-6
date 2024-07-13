@@ -511,32 +511,36 @@ int main() {
     return 0;
 }
 
-// problem 24 accept hoy nai
+// problem 24 
 #include <iostream>
+#include <cmath>
+#include <cstdint>
 
 using namespace std;
 
-int lastTwoDigitsMultiplication(int A, int B, int C, int D) {
-    // Calculate the product A * B * C * D
-    long long product = static_cast<long long>(A % 100) * (B % 100) % 100 * (C % 100) % 100 * (D % 100) % 100;
-    
-    // Get the last two digits
-    int lastTwoDigits = product % 100;
-    
-    return lastTwoDigits;
-}
-
 int main() {
-    // Read input values A, B, C, D
-    int A, B, C, D;
-    cin >> A >> B >> C >> D;
-    
-    // Calculate and print the last two digits of the multiplication
-    int result = lastTwoDigitsMultiplication(A, B, C, D);
-    cout << result << endl;
-    
+
+    int a,b,c,d;
+    cin >> a >> b >> c >> d;
+    a = a % 100;
+     b = b % 100;
+      c = c % 100;
+       d = d % 100;
+       int product = a*b*c*d;
+       int last_two_digit = product % 100;
+       if(last_two_digit < 10){
+        cout << 0 << last_two_digit << endl;
+       }else{
+           cout << last_two_digit << endl;
+
+       }
+
+
     return 0;
 }
+
+
+
 // problem 25 submit hoy na
 #include <iostream>
 #include <cmath>
@@ -578,6 +582,27 @@ int main() {
         cout << i<< endl;
     }
 
+    return 0;
+}
+//problem 27
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+    
+    bool hasEven = false;
+    for (int i = 2; i <= N; i += 2) {
+        cout << i << endl;
+        hasEven = true;
+    }
+    
+    if (!hasEven) {
+        cout << -1 << endl;
+    }
+    
     return 0;
 }
 
