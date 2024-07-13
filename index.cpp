@@ -923,6 +923,95 @@ int main() {
     return 0;
 }
 // problem 34
+#include <iostream>
+using namespace std;
 
+int main() {
+    int N;
+    cin >> N;
+
+    // Step 1: Reverse the number N without leading zeros
+    int reversedN = 0;
+    int originalN = N;
+
+    while (N > 0) {
+        int digit = N % 10;
+        reversedN = reversedN * 10 + digit;
+        N /= 10;
+    }
+
+    // Step 2: Check if originalN is a palindrome
+    bool isPalindrome = (originalN == reversedN);
+
+    // Output reversedN and whether originalN is a palindrome
+    cout << reversedN << endl;
+    if (isPalindrome) {
+        cout << "YES" << endl;
+    } else {
+        cout << "NO" << endl;
+    }
+
+    return 0;
+}
+// problem 35
+#include <iostream>
+using namespace std;
+
+bool isPrime(int n) {
+    if (n <= 1) {
+        return false;
+    }
+    if (n == 2) {
+        return true;
+    }
+    if (n % 2 == 0) {
+        return false;
+    }
+    for (int i = 3; i * i <= n; i += 2) {
+        if (n % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+    int N;
+    cin >> N;
+
+    // Print all prime numbers between 1 and N
+    for (int i = 2; i <= N; ++i) {
+        if (isPrime(i)) {
+            cout << i << " ";
+        }
+    }
+    cout << endl;
+
+    return 0;
+}
+// problem 37
+#include <iostream>
+using namespace std;
+
+int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int main() {
+    int a, b;
+    cout << " ";
+    cin >> a >> b;
+
+    int result = gcd(a, b);
+    cout  << result << endl;
+
+    return 0;
+}
+// problem 39
 
 
