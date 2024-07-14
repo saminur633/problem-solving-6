@@ -1343,6 +1343,42 @@ int main() {
 
     return 0;
 }
+// Triangle 
+#include <iostream>
+using namespace std;
+
+struct Triangle{
+    double base , height;
+
+    double area(int base){
+
+        return base * height /2;
+    }
+
+
+};
+
+int main() {
+    Triangle x;
+    x.base = 10;
+    x.height = 20;
+    cout << x.area(20) << '\n';
+
+    return 0;
+}
+// pointer
+#include <iostream>
+using namespace std;
+
+int main() {
+    int *ptr;
+    int num = 10;
+    *ptr = num;
+    cout << *ptr << endl;
+
+    return 0;
+}
+// 
 // Finish code
 
 
