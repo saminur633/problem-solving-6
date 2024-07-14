@@ -1013,5 +1013,336 @@ int main() {
     return 0;
 }
 // problem 39
+#include <iostream>
+using namespace std;
+
+int main() {
+    
+    char symbol;
+    cin >> symbol;
+
+   
+    int n;
+    cin >> n;
+
+    
+    int a[n];
+
+    
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < a[i]; j++) {
+            cout << symbol;
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+// problem 40
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    //cout << "Enter the number of rows: ";
+    cin >> n;
+
+    for(int i = 1; i <= n; i++) {
+        for(int j = 1; j <= i; j++) {
+            cout << '*';
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+// problem 41
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    //cout << "Enter the number of rows: ";
+    cin >> n;
+
+    for(int i = n; i >= 1; i--) {
+        for(int j = 1; j <= i; j++) {
+            cout << '*';
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+// problem 42
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T;
+    
+    while (T--) {
+        string N;
+        cin >> N;
+        
+        // Print the digits of N in reverse order separated by space
+        for (int i = N.length() - 1; i >= 0; i--) {
+            cout << N[i];
+            if (i > 0) {
+                cout << " ";
+            }
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+// problem 43
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int N, M;
+    
+    while (cin >> N >> M) {
+        if (N <= 0 || M <= 0) {
+            break;
+        }
+        
+        int start = min(N, M);
+        int end = max(N, M);
+        int sum = 0;
+        
+        for (int i = start; i <= end; ++i) {
+            cout << i << " ";
+            sum += i;
+        }
+        
+        cout << "sum =" << sum << endl;
+    }
+
+    return 0;
+}
+// problem 44
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T;
+    
+    while (T--) {
+        int X, Y;
+        cin >> X >> Y;
+        
+        // Ensure that X is less than Y
+        if (X > Y) {
+            swap(X, Y);
+        }
+        
+        int sum = 0;
+        
+        // Sum odd numbers between X and Y (excluding X and Y)
+        for (int i = X + 1; i < Y; ++i) {
+            if (i % 2 != 0) {
+                sum += i;
+            }
+        }
+        
+        // Print the result for the current test case
+        cout << sum << endl;
+    }
+
+    return 0;
+}
+// problem 45
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+
+    // Loop for each row of the pyramid
+    for (int i = 1; i <= N; i++) {
+        // Print spaces before the stars
+        for (int space = 1; space <= N - i; space++) {
+            cout << " ";
+        }
+
+        // Print stars
+        for (int star = 1; star <= 2 * i - 1; star++) {
+            cout << "*";
+        }
+
+        // Move to the next line after each row
+        cout << endl;
+    }
+
+    return 0;
+}
+// problem 46
+#include <iostream>
+using namespace std;
+
+// Helper function to calculate the sum of digits of a number
+int sumOfDigits(int num) {
+    int sum = 0;
+    while (num > 0) {
+        sum += num % 10;
+        num /= 10;
+    }
+    return sum;
+}
+
+int main() {
+    int N, A, B;
+    cin >> N >> A >> B;
+
+    int totalSum = 0;
+
+    // Loop through each number from 1 to N
+    for (int i = 1; i <= N; i++) {
+        int digitSum = sumOfDigits(i);
+        // Check if the sum of digits is between A and B
+        if (digitSum >= A && digitSum <= B) {
+            totalSum += i;
+        }
+    }
+
+    cout << totalSum << endl;
+
+    return 0;
+}
+// problem 47
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+
+    int current = 1;
+
+    for (int i = 1; i <= N; i++) {
+        // Print three consecutive numbers
+        cout << current << " " << (current + 1) << " " << (current + 2) << " PUM" << endl;
+        // Move to the next set of numbers
+        current += 4;
+    }
+
+    return 0;
+}
+// problem 48
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+
+    // Print top half of the diamond including the middle row
+    for (int i = 1; i <= N; i++) {
+        // Print spaces
+        for (int j = 1; j <= N - i; j++) {
+            cout << " ";
+        }
+        // Print stars
+        for (int j = 1; j <= 2 * i - 1; j++) {
+            cout << "*";
+        }
+        cout << endl;
+    }
+
+    // Print bottom half of the diamond including the middle row again
+    for (int i = N; i >= 1; i--) {
+        // Print spaces
+        for (int j = 1; j <= N - i; j++) {
+            cout << " ";
+        }
+        // Print stars
+        for (int j = 1; j <= 2 * i - 1; j++) {
+            cout << "*";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+// problem 49
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T;
+    
+    while (T--) {
+        unsigned int N;
+        cin >> N;
+        
+        // Step 1: Convert N to its binary representation and count the number of 1's
+        int countOnes = 0;
+        unsigned int temp = N;
+        while (temp > 0) {
+            countOnes += (temp & 1); // Check if the least significant bit is 1
+            temp >>= 1; // Right shift to process the next bit
+        }
+        
+        // Step 2: Create a new binary number consisting of 'countOnes' ones
+        unsigned int result = (1 << countOnes) - 1;
+        
+        // Step 3: Print the result
+        cout << result << endl;
+    }
+    
+    return 0;
+}
+
+
+// problem 50
+#include <iostream>
+using namespace std;
+
+void printFibonacci(int n) {
+    // Special cases for n = 1 or n = 2
+    if (n >= 1) {
+        cout << 0;
+    }
+    if (n >= 2) {
+        cout << " " << 1;
+    }
+    
+    // Variables to store the last two Fibonacci numbers
+    int a = 0, b = 1, next;
+    
+    // Loop to compute the next Fibonacci numbers
+    for (int i = 2; i < n; i++) {
+        next = a + b;
+        cout << " " << next;
+        a = b;
+        b = next;
+    }
+    cout << endl;
+}
+
+int main() {
+    int n;
+    cin >> n;
+
+    printFibonacci(n);
+
+    return 0;
+}
+// Finish code
 
 
